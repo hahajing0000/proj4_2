@@ -3,6 +3,7 @@ package com.zy.home.ui.act;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+import android.widget.Toast;
 
 import com.alibaba.android.arouter.facade.annotation.Route;
 import com.zy.common.router.RouterPath;
@@ -15,5 +16,7 @@ public class HomeActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
+
+        Toast.makeText(this,"123",Toast.LENGTH_SHORT).show();
     }
 }
