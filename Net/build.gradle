@@ -1,18 +1,14 @@
 apply plugin: 'com.android.library'
 
-def projInfo = rootProject.ext.android
-def libInfo = rootProject.ext.dependencies
-
 android {
-    compileSdkVersion projInfo.compileSdkVersion
-    buildToolsVersion projInfo.buildToolsVersion
+    compileSdkVersion 29
+    buildToolsVersion "29.0.3"
 
     defaultConfig {
-        minSdkVersion projInfo.minSdkVersion
-        targetSdkVersion projInfo.targetSdkVersion
-        versionCode projInfo.versionCode
-        versionName projInfo.versionName
-
+        minSdkVersion 16
+        targetSdkVersion 29
+        versionCode 1
+        versionName "1.0"
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
         consumerProguardFiles 'consumer-rules.pro'
@@ -30,20 +26,9 @@ android {
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
 
-    implementation libInfo.appcompat
+    implementation 'androidx.appcompat:appcompat:1.1.0'
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'androidx.test.ext:junit:1.1.1'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
-
-
-    //导入ARouter
-    api libInfo.arouter
-
-    api libInfo.retrofit
-    api libInfo.retrofitgson
-    api libInfo.retrofitrxjava
-    api libInfo.gson
-    api libInfo.rxandroid
-    api libInfo.rxjava
-    api libInfo.okhttplog
+    implementation project(path: ':Common')
 }
