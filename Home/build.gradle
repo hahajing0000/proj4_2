@@ -63,4 +63,5 @@ dependencies {
     annotationProcessor libInfo.aroutercompiler
 
     implementation project(path: ':Common')
+    implementation project(path: ':Core')
 }
