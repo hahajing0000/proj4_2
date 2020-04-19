@@ -8,6 +8,7 @@ import android.view.ViewGroup;
 import com.zy.core.BasePresenter;
 import com.zy.core.IView;
 
+import androidx.annotation.IdRes;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
@@ -62,6 +63,16 @@ public abstract class BaseFragment<P extends BasePresenter> extends Fragment imp
      * @param savedInstanceState
      */
     protected abstract void initView(Bundle savedInstanceState);
+
+    /**
+     * Fragment获取资源id方法
+     * @param viewId
+     * @param <T>
+     * @return
+     */
+    protected <T extends View> T $(@IdRes int viewId) {
+        return this.getView().findViewById(viewId);
+    }
 
     @Override
     public void onDestroy() {
