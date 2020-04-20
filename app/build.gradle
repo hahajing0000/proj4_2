@@ -48,8 +48,13 @@ dependencies {
 
     implementation project(path: ':Common')
 
+
     if(isNeedHomeMoudle.toBoolean()){
         implementation project(path: ':Home')
+    }
+
+    if (isNeedUserCenterMoudle.toBoolean()){
+        implementation project(path: ':UserCenter')
     }
 
 }
