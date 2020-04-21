@@ -27,7 +27,7 @@ public class UserPresenter extends UserContract.UserPresenter {
             public void onNext(UserEntity userEntity) {
                 super.onNext(userEntity);
                 if (mView!=null&&mView.get()!=null){
-                    mView.get().registerSuccess();
+                    mView.get().registerSuccess(userEntity);
                 }
             }
 
@@ -49,7 +49,7 @@ public class UserPresenter extends UserContract.UserPresenter {
             public void onNext(BaseEntity<TestUserEntity> testUserEntityBaseEntity) {
                 super.onNext(testUserEntityBaseEntity);
                 if (mView!=null&&mView.get()!=null){
-                    mView.get().registerSuccess();
+                    mView.get().registerSuccess(testUserEntityBaseEntity);
                 }
             }
 

@@ -7,6 +7,7 @@ import com.zy.common.log.ZLog;
 import com.zy.net.common.Config;
 import com.zy.net.model.api.TokenApi;
 import com.zy.net.model.protocol.TokenRespEntity;
+import com.zy.net.retrofit.converter.FastJsonConverterFactory;
 
 import java.io.IOException;
 import java.util.concurrent.TimeUnit;
@@ -57,7 +58,7 @@ public class RetrofitFactory {
     private void initRetrofit() {
         retrofit = new Retrofit.Builder()
                 .baseUrl(Config.SERVER_URL)
-                .addConverterFactory(GsonConverterFactory.create())
+                .addConverterFactory(FastJsonConverterFactory.create())
                 .addCallAdapterFactory(RxJava2CallAdapterFactory.create())
                 .client(createOkhttpClient())
                 .build();

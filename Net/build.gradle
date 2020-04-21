@@ -1,14 +1,18 @@
 apply plugin: 'com.android.library'
 
+
+def projInfo = rootProject.ext.android
+def libInfo = rootProject.ext.dependencies
+
 android {
-    compileSdkVersion 29
-    buildToolsVersion "29.0.3"
+    compileSdkVersion projInfo.compileSdkVersion
+    buildToolsVersion projInfo.buildToolsVersion
 
     defaultConfig {
-        minSdkVersion 16
-        targetSdkVersion 29
-        versionCode 1
-        versionName "1.0"
+        minSdkVersion projInfo.minSdkVersion
+        targetSdkVersion projInfo.targetSdkVersion
+        versionCode projInfo.versionCode
+        versionName projInfo.versionName
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
         consumerProguardFiles 'consumer-rules.pro'
@@ -31,4 +35,7 @@ dependencies {
     androidTestImplementation 'androidx.test.ext:junit:1.1.1'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
     implementation project(path: ':Common')
+
+    implementation libInfo.fastjsonAndroid
+    implementation libInfo.fastjson
 }

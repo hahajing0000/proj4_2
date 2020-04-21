@@ -28,8 +28,8 @@ public interface UserContract {
         public abstract Observable<BaseEntity<TestUserEntity>> register2(TestUserEntity testUserEntity);
     }
 
-    interface UserView extends IView{
-        void registerSuccess();
+    interface UserView<T> extends IView{
+        void registerSuccess(T result);
         void registerFailed();
     }
 

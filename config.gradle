@@ -28,7 +28,10 @@ ext{
             glide: "4.9.0",
             disklru:"2.0.2",
             autodisposearchcomponents:"1.0.0-RC3",
-            autodispose:"1.0.0-RC3"
+            autodispose:"1.0.0-RC3",
+
+            fastjsonAndroid: "1.1.70.android",
+            fastjson: "1.2.55"
     ]
 
     //所有的依赖包
@@ -49,6 +52,9 @@ ext{
             autodisposearchcomponents:"com.uber.autodispose:autodispose-android-archcomponents:$dependenciesVersion.autodisposearchcomponents",
             autodispose:"com.uber.autodispose:autodispose-android:$dependenciesVersion.autodispose",
             glide:"com.github.bumptech.glide:glide:$dependenciesVersion.glide",
-            disklru:"com.jakewharton:disklrucache:$dependenciesVersion.disklru"
+            disklru:"com.jakewharton:disklrucache:$dependenciesVersion.disklru",
+
+            fastjsonAndroid: "com.alibaba:fastjson:$dependenciesVersion.fastjsonAndroid",
+            fastjson:"com.alibaba:fastjson:$dependenciesVersion.fastjson"
     ]
 }

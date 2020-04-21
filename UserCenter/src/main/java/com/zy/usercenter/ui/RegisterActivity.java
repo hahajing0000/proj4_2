@@ -20,6 +20,7 @@ import com.uber.autodispose.android.lifecycle.AndroidLifecycleScopeProvider;
 import com.zy.common.log.ZLog;
 import com.zy.core.ui.BaseActivity;
 import com.zy.net.RetrofitFactory;
+import com.zy.net.protocol.resp.BaseEntity;
 import com.zy.usercenter.R;
 import com.zy.usercenter.contract.UserContract;
 import com.zy.usercenter.model.protocol.resp.TestUserEntity;
@@ -28,7 +29,7 @@ import com.zy.usercenter.presenter.UserPresenter;
 
 import java.util.concurrent.TimeUnit;
 
-public class RegisterActivity extends BaseActivity<UserPresenter> implements UserContract.UserView {
+public class RegisterActivity extends BaseActivity<UserPresenter> implements UserContract.UserView<BaseEntity<TestUserEntity>> {
     private final String TAG= RegisterActivity.class.getSimpleName();
     private EditText etRegisterPhonenumber;
     private EditText etRegisterPwd;
@@ -83,10 +84,9 @@ public class RegisterActivity extends BaseActivity<UserPresenter> implements Use
     }
 
 
-
     @Override
-    public void registerSuccess() {
-        showMsg("register success");
+    public void registerSuccess(BaseEntity<TestUserEntity> result) {
+        showMsg(result.getData().getUsername());
     }
 
     @Override
