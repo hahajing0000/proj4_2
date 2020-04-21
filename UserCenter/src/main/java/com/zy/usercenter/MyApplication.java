@@ -5,6 +5,8 @@ import android.app.Application;
 import android.os.Bundle;
 import android.util.Log;
 
+import com.zy.common.log.ZLog;
+
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 
@@ -17,6 +19,12 @@ public class MyApplication extends Application {
     public void onCreate() {
         super.onCreate();
         registerLifecycle();
+
+        /**
+         * 设置开启log
+         */
+        ZLog.getInstance().openDebug(true);
+//        ZLog.getInstance().setLogType(new ConsoleImpl());
     }
 
     private void registerLifecycle() {

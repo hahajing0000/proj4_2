@@ -3,6 +3,7 @@ package com.zy.net;
 import android.text.TextUtils;
 import android.util.Log;
 
+import com.zy.common.log.ZLog;
 import com.zy.net.common.Config;
 import com.zy.net.model.api.TokenApi;
 import com.zy.net.model.protocol.TokenRespEntity;
@@ -29,6 +30,7 @@ public class RetrofitFactory {
     private static volatile RetrofitFactory instance=null;
     private Retrofit retrofit;
     private OkHttpClient.Builder builder;
+    private final String TAG=RetrofitFactory.class.getSimpleName();
 
     private RetrofitFactory(){
         initRetrofit();
@@ -125,7 +127,7 @@ public class RetrofitFactory {
                 if (checkHttpCode401(response)){
                     String token=requestToken();
                     if (TextUtils.isEmpty(token)){
-                        Log.e("123","Error : token is null...");
+                        ZLog.getInstance().e(TAG,"Error : token is null...");
                         return response;
                     }
                     //Request newRequest=chain.request();
@@ -173,7 +175,7 @@ public class RetrofitFactory {
                 return  result.body().getAccess_token();
             }
         } catch (IOException e) {
-            Log.e("123",e.getMessage());
+            ZLog.getInstance().e(TAG,e.getMessage());
         }
         return "";
     }

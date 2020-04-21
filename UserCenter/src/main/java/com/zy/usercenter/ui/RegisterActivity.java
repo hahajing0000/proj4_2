@@ -17,7 +17,9 @@ import android.widget.EditText;
 
 import com.uber.autodispose.AutoDispose;
 import com.uber.autodispose.android.lifecycle.AndroidLifecycleScopeProvider;
+import com.zy.common.log.ZLog;
 import com.zy.core.ui.BaseActivity;
+import com.zy.net.RetrofitFactory;
 import com.zy.usercenter.R;
 import com.zy.usercenter.contract.UserContract;
 import com.zy.usercenter.model.protocol.resp.TestUserEntity;
@@ -27,6 +29,7 @@ import com.zy.usercenter.presenter.UserPresenter;
 import java.util.concurrent.TimeUnit;
 
 public class RegisterActivity extends BaseActivity<UserPresenter> implements UserContract.UserView {
+    private final String TAG= RegisterActivity.class.getSimpleName();
     private EditText etRegisterPhonenumber;
     private EditText etRegisterPwd;
     private EditText etRegisterPwd2;
@@ -70,7 +73,8 @@ public class RegisterActivity extends BaseActivity<UserPresenter> implements Use
 
     @Override
     protected void initData() {
-
+        ZLog.getInstance().d("this is log message");
+        ZLog.getInstance().d(TAG,"this is TAG log message");
     }
 
     @Override
