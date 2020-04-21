@@ -34,7 +34,6 @@ public class GlideStrategy implements ImgLoaderStrategy<NormalImageSetting> {
         //requestOptions.skipMemoryCache(true);
         //都缓存  原生数据 本地数据 转换的数据都缓存
         //requestOptions.diskCacheStrategy(DiskCacheStrategy.ALL);
-
         Glide.with(context).load(setting.getmUrl()).apply(requestOptions).into(setting.getmView());
     }
 }
