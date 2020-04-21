@@ -29,4 +29,8 @@
         android:layout_height="wrap_content">
 
     </Button>
+    <ImageView
+        android:id="@+id/iv_register_img"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"></ImageView>
 </LinearLayout>
