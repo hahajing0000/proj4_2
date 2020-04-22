@@ -24,6 +24,7 @@ import com.zy.imageloader.ImageLoader;
 import com.zy.imageloader.setting.NormalImageSetting;
 import com.zy.net.RetrofitFactory;
 import com.zy.net.protocol.resp.BaseEntity;
+import com.zy.storage.common.ZLRUCache;
 import com.zy.usercenter.R;
 import com.zy.usercenter.contract.UserContract;
 import com.zy.usercenter.model.protocol.resp.TestUserEntity;
@@ -90,6 +91,10 @@ public class RegisterActivity extends BaseActivity<UserPresenter> implements Use
 //                    .imageRadius(250)
                     .imageView(ivRegisterImg)
                     .build());
+
+        ZLRUCache.getInstance().put("123","123");
+        String result = (String) ZLRUCache.getInstance().get("123");
+        ZLog.getInstance().w("result = "+result);
     }
 
     @Override
