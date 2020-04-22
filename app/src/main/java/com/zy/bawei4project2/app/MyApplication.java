@@ -24,12 +24,6 @@ public class MyApplication extends Application {
         }
         ARouter.init(this); // 尽可能早，推荐在Application中初始化
 
-
-        /**
-         * 设置开启log
-         */
-        ZLog.getInstance().openDebug(true);
-
         /**
          * 设置Application的上下文提供给各Moudle使用
          */

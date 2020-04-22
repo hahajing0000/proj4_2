@@ -3,6 +3,7 @@ apply plugin: 'com.android.library'
 
 def projInfo = rootProject.ext.android
 def libInfo = rootProject.ext.dependencies
+def urls = rootProject.ext.urls
 
 android {
     compileSdkVersion projInfo.compileSdkVersion
@@ -22,6 +23,12 @@ android {
         release {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+            //线上环境url
+            buildConfigField("String","BaseUrl","\""+urls.online+"\"")
+        }
+        debug{
+            //线下环境url
+            buildConfigField("String","BaseUrl","\""+urls.offline+"\"")
         }
     }
 

@@ -1,5 +1,7 @@
 package com.zy.common.log;
 
+import com.zy.common.BuildConfig;
+
 /**
  * @author:zhangyue
  * @date:2020/4/21
@@ -18,7 +20,7 @@ public class ZLog {
     /**
      * 是否是Debug模式
      */
-    private boolean isDebug=true;
+    private boolean isDebug=BuildConfig.IsDebug;
 
     /**
      * 通过外界设置log策略

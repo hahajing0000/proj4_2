@@ -22,6 +22,12 @@ android {
         release {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+            //设置IsDebug标识 false为release模式
+            buildConfigField("boolean","IsDebug","false")
+        }
+        debug{
+            //设置IsDebug标识 true为debug模式
+            buildConfigField("boolean","IsDebug","true")
         }
     }
 

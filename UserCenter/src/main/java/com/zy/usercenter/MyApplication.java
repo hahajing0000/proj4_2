@@ -25,11 +25,6 @@ public class MyApplication extends Application {
         registerLifecycle();
 
         /**
-         * 设置开启log
-         */
-        ZLog.getInstance().openDebug(true);
-
-        /**
          * 设置Application的上下文提供给各Moudle使用
          */
         AppUtils.setContext(this);
