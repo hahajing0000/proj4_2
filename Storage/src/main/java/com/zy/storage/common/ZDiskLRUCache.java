@@ -1,5 +1,6 @@
 package com.zy.storage.common;
 
+import android.content.ContentValues;
 import android.content.Context;
 import android.os.Environment;
 
@@ -97,6 +98,11 @@ public class ZDiskLRUCache<T> {
         }
     }
 
+    /**
+     * 获取数据
+     * @param key
+     * @return
+     */
     public T getData(String key) {
         InputStream is=null;
         try {
@@ -132,6 +138,10 @@ public class ZDiskLRUCache<T> {
         return null;
     }
 
+    /**
+     * 通过key移除数据
+     * @param key
+     */
     public void removeByKey(String key) {
         String mKey=MD5.encrypt(key);
         try {
@@ -141,6 +151,9 @@ public class ZDiskLRUCache<T> {
         }
     }
 
+    /**
+     * 全部清除——清理
+     */
     public void clearData() {
         try {
             diskLruCache.delete();
@@ -150,6 +163,7 @@ public class ZDiskLRUCache<T> {
     }
 
     /**
+     * 内置存储  sdcard0  外置存储 sdcard1
      * 获取缓存路径
      * @param context
      * @param uniqueName
