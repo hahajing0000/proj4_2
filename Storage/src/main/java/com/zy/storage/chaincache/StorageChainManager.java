@@ -123,7 +123,7 @@ public class StorageChainManager {
     public void addChain(String key,StorageChain storageChain){
         if (chainMap.containsKey(key)){
             StorageChain storageChain1 = chainMap.get(key);
-            while (storageChain1!=null){
+            while (storageChain1.nextChain!=null){
                 storageChain1=storageChain1.nextChain;
             }
             storageChain1.nextChain=storageChain;
