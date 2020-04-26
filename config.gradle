@@ -31,7 +31,9 @@ ext{
             autodispose:"1.0.0-RC3",
 
             fastjsonAndroid: "1.1.70.android",
-            fastjson: "1.2.55"
+            fastjson: "1.2.55",
+
+            greenDao: "3.2.2"
     ]
 
     //所有的依赖包
@@ -55,7 +57,9 @@ ext{
             disklru:"com.jakewharton:disklrucache:$dependenciesVersion.disklru",
 
             fastjsonAndroid: "com.alibaba:fastjson:$dependenciesVersion.fastjsonAndroid",
-            fastjson:"com.alibaba:fastjson:$dependenciesVersion.fastjson"
+            fastjson:"com.alibaba:fastjson:$dependenciesVersion.fastjson",
+
+            greenDao:"org.greenrobot:greendao:$dependenciesVersion.greenDao"
     ]
 
     urls=[

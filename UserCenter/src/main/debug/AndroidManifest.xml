@@ -12,17 +12,19 @@
         android:label="UserCenter 模块"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".ui.StorageActivity">
+        <activity android:name=".ui.SPActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".ui.LinkedHashmapActivity"></activity>
-        <activity android:name=".ui.RegisterActivity">
+        <activity android:name=".ui.StorageActivity">
 
         </activity>
+
+        <activity android:name=".ui.LinkedHashmapActivity" />
+        <activity android:name=".ui.RegisterActivity"></activity>
     </application>
 
 </manifest>

@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.util.Log;
 
 import com.zy.common.app.AppUtils;
+import com.zy.common.exception.ZGlobalExceptionManager;
 import com.zy.common.log.ZLog;
 import com.zy.imageloader.ImageLoader;
 import com.zy.imageloader.impl.FresoStrategy;
@@ -34,6 +35,11 @@ public class MyApplication extends Application {
          */
         ImageLoader.getInstance().initStrategy(new GlideStrategy());
 //        ZLog.getInstance().setLogType(new ConsoleImpl());
+
+        /**
+         * 全局异常捕获初始化
+         */
+        ZGlobalExceptionManager.getInstance().init(this);
     }
 
     private void registerLifecycle() {

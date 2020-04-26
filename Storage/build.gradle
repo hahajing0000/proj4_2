@@ -1,4 +1,5 @@
 apply plugin: 'com.android.library'
+apply plugin: 'org.greenrobot.greendao' // apply plugin
 
 def projInfo = rootProject.ext.android
 def libInfo = rootProject.ext.dependencies
@@ -36,4 +37,6 @@ dependencies {
 
     implementation libInfo.disklru
     implementation project(path: ':Common')
+
+    implementation libInfo.greenDao // add library
 }
