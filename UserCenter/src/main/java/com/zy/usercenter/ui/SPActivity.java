@@ -12,13 +12,25 @@ import com.zy.storage.common.SPUtils;
 import com.zy.storage.greendao.ZDaoManager;
 import com.zy.storage.greendao.entity.TestEntity;
 import com.zy.usercenter.R;
+import com.zy.widget.normal.NormalEditText;
 
 public class SPActivity extends AppCompatActivity {
     private Button btnSpTest;
+    private NormalEditText netUserTest;
+
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_s_p);
+        netUserTest = (NormalEditText) findViewById(R.id.net_user_test);
+        netUserTest.setListener(new NormalEditText.NormalEditTextListener() {
+            @Override
+            public void onEvent(NormalEditText objs, Object... args) {
+
+            }
+        });
 
         btnSpTest = (Button) findViewById(R.id.btn_sp_Test);
 
@@ -45,7 +57,7 @@ public class SPActivity extends AppCompatActivity {
 //                ZLog.getInstance().d(testEntity1.toString());
 
 //                startActivity(new Intent(SPActivity.this,StorageActivity.class));
-                int a=2/0;
+
             }
         });
     }

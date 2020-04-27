@@ -67,4 +67,5 @@ dependencies {
     implementation project(path: ':Common')
     implementation project(path: ':ImageLoader')
     implementation project(path: ':Storage')
+    implementation project(path: ':Widget')
 }
